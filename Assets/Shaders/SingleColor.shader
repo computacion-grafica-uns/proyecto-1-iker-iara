@@ -9,28 +9,28 @@ Shader "Lighting/SingleColor"
 		Pass
 		{
 			CGPROGRAM
-			// declaramos que la función llamada "vert" definirá el shader de vértices
+			// declaramos que la funciï¿½n llamada "vert" definirï¿½ el shader de vï¿½rtices
 			#pragma vertex vert
-			// declaramos que la función llamada "frag" definirá el shader de fragmentos
+			// declaramos que la funciï¿½n llamada "frag" definirï¿½ el shader de fragmentos
 			#pragma fragment frag
 
-			//datos de cada vértice
+			//datos de cada vï¿½rtice
 			struct appdata {
 				float4 vertex : POSITION;
 			};
 
-			//datos que pasaremos del shader de vértices al de fragmentos
+			//datos que pasaremos del shader de vï¿½rtices al de fragmentos
 			struct v2f {
 				float4 vertex : SV_POSITION;
 			};
 
 			float4 _MaterialColor;
 
-			// shader de vértices
+			// shader de vï¿½rtices
 			v2f vert(appdata v)
 			{
 				v2f o;
-				//veremos más adelante qué hace esta función
+				//veremos mï¿½s adelante quï¿½ hace esta funciï¿½n
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				return o;
 			}
