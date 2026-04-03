@@ -73,7 +73,6 @@ public class PisoDepartamento : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh;
 
         MeshRenderer mr = GetComponent<MeshRenderer>();
-        //aca faltaria cambiar el shader para usar la modelMatrix 
-        mr.material = new Material(Shader.Find("SingleColor"));
+        mr.material = new Material(Shader.Find("ShaderBasico"));
     }
 }

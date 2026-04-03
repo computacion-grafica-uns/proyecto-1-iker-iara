@@ -70,8 +70,7 @@ public class Paredes : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh;
 
         MeshRenderer mr = GetComponent<MeshRenderer>();
-        //aca faltaria cambiar el shader para usar la modelMatrix
-        mr.material = new Material(Shader.Find("SingleColor"));
+        mr.material = new Material(Shader.Find("ShaderBasico"));
     }
 
     void AgregarCaja(List<Vector3> listaVertices, List<int> listaCaras, Vector3 origen, Vector3 tam)
