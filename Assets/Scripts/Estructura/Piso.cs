@@ -73,6 +73,7 @@ public class PisoDepartamento : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh;
 
         MeshRenderer mr = GetComponent<MeshRenderer>();
-        mr.material = new Material(Shader.Find("ShaderBasico"));
+        mr.material = new Material(Shader.Find("Lighting/SingleColor"));
+        mr.material.SetColor("_MaterialColor", new Color(0.96f, 0.90f, 0.78f, 1f));
     }
 }
