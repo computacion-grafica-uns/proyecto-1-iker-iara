@@ -18,7 +18,7 @@
             float ancho = 5f;      // eje X
             float alto = 2.5f;     // eje Y
             float largo = 6f;      // eje Z
-            float espesor = 0.2f;  // grosor de las paredes
+            float espesor = 0.2f;  // grosor de paredes exteriores
 
             List<Vector3> listaVertices = new List<Vector3>();
             List<int> listaCaras = new List<int>();
@@ -55,6 +55,32 @@
                 new Vector3(espesor, alto, largo - 2f * espesor)
             );
 
+            // -------------------------------
+            // Subdivisión de baño
+            // -------------------------------
+            float anchoBano = 2f;
+            float largoBano = 3f;
+            float espesorBano = 0.1f;
+
+            float inicioXBano = ancho - anchoBano; // 3
+            float inicioZBano = largo - largoBano; // 3
+
+            // Pared interna vertical
+            AgregarCaja(
+                listaVertices,
+                listaCaras,
+                new Vector3(inicioXBano, 0f, inicioZBano),
+                new Vector3(espesorBano, alto, largoBano)
+            );
+
+            // Pared interna horizontal
+            AgregarCaja(
+                listaVertices,
+                listaCaras,
+                new Vector3(inicioXBano, 0f, inicioZBano),
+                new Vector3(anchoBano, alto, espesorBano)
+            );
+
             vertices = listaVertices.ToArray();
             caras = listaCaras.ToArray();
 
@@ -72,7 +98,7 @@
             MeshRenderer mr = GetComponent<MeshRenderer>();
             mr.material = new Material(Shader.Find("Lighting/SingleColor"));
             mr.material.SetColor("_MaterialColor", new Color(0.88f, 0.88f, 0.86f, 1f));
-        }
+}
 
         void AgregarCaja(List<Vector3> listaVertices, List<int> listaCaras, Vector3 origen, Vector3 tam)
         {
