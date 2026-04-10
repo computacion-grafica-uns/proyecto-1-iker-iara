@@ -58,11 +58,11 @@ public class Matrices
     {
         // Target apunta al objeto a ver y Pos apunta a la cámara
         // Target-pos apunta al objeto desde la cámara
-        Vector3 forward = (target-pos).normalized;
+        Vector3 forward = (target - pos).normalized;
 
         // Eje de right es perpendicular al forward y al up
-        Vector3 right = Vector3.Cross(forward, up).normalized;
-        Vector3 newUp = Vector3.Cross(forward, right);
+        Vector3 right = Vector3.Cross(up, forward).normalized;
+        Vector3 newUp = Vector3.Cross(forward, right).normalized;
 
         Matrix4x4 vista = new Matrix4x4
         (
@@ -71,6 +71,7 @@ public class Matrices
             new Vector4(                 right.z,                  newUp.z,                -forward.z, 0f),
             new Vector4(-Vector3.Dot(right, pos), -Vector3.Dot(newUp, pos), Vector3.Dot(forward, pos), 1f)
         );
+
         return vista;
     }
 
