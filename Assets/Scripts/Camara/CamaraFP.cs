@@ -17,7 +17,7 @@ public class FpsCamera : CameraCasera
     public float zoomSwitchSpeed = 1f;
 
     [Header("Estado actual")]
-    [SerializeField] [Tooltip("Este si está en grados :)")] private Vector2 pitchYaw = new(0,0);
+    [SerializeField] [Tooltip("Este si está en grados :)")] private Vector2 yawPitch = new(0,0);
 
     void Update()
     {
@@ -37,8 +37,8 @@ public class FpsCamera : CameraCasera
             actualSpeed *= sneakMult;
 
         // Puedo reusar la matriz de rotación para calcular la dirección de traslación
-        var rotMatrix = Matrices.CreateViewMatrixFromSphericalCoords(Vector3.zero, pitchYaw);
-        var localDirection = rotMatrix * new Vector4(direction.x, direction.y, direction.z, 1f);
+        var rotMatrix = Matrices.CreateViewMatrixFromSphericalCoords(Vector3.zero, yawPitch);
+        var localDirection = rotMatrix.transpose * new Vector4(direction.x, direction.y, direction.z, 1f);
         var localMovement = actualSpeed * Time.deltaTime * (Vector3)localDirection;
 
         position += localMovement;
@@ -48,8 +48,8 @@ public class FpsCamera : CameraCasera
     {
         var mouseDeltaPos = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
-        pitchYaw += pitchYawSensitivity * (Vector2)mouseDeltaPos;
-        pitchYaw = new(pitchYaw.x, Mathf.Clamp(pitchYaw.y, -maxPitch, maxPitch));
+        yawPitch += pitchYawSensitivity * (Vector2)mouseDeltaPos;
+        yawPitch = new(yawPitch.x, Mathf.Clamp(yawPitch.y, -maxPitch, maxPitch));
     }
 
     public void HandleZoom()
@@ -66,6 +66,6 @@ public class FpsCamera : CameraCasera
 
     public override Matrix4x4 GetViewMatrix()
     {
-        return Matrices.CreateViewMatrixFromSphericalCoords(position, pitchYaw);
+        return Matrices.CreateViewMatrixFromSphericalCoords(position, yawPitch);
     }
 }

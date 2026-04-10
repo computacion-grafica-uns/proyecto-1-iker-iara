@@ -38,10 +38,13 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Alpha1))
+        if (Input.GetKeyUp(KeyCode.Alpha0) || Input.GetKeyUp(KeyCode.Keypad0))
+            ToggleCursor();
+
+        if (Input.GetKeyUp(KeyCode.Alpha1) || Input.GetKeyUp(KeyCode.Keypad1))
             SwitchToCamera(orbitalCamera);
 
-        if (Input.GetKeyUp(KeyCode.Alpha2))
+        if (Input.GetKeyUp(KeyCode.Alpha2) || Input.GetKeyUp(KeyCode.Keypad2))
             SwitchToCamera(fpsCamera);
     }
 
@@ -52,5 +55,11 @@ public class GameManager : MonoBehaviour
 
         currentCamera = camera;
         camera.gameObject.SetActive(true);
+    }
+
+    private void ToggleCursor()
+    {
+        Cursor.visible = !Cursor.visible;
+        Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
     }
 }

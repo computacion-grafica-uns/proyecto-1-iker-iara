@@ -75,26 +75,26 @@ public class Matrices
         return vista;
     }
 
-    public static Matrix4x4 CreateViewMatrixFromSphericalCoords(Vector3 pos, Vector2 pitchYaw)
+    public static Matrix4x4 CreateViewMatrixFromSphericalCoords(Vector3 pos, Vector2 yawPitch)
     {
-        var pitch = pitchYaw.y;
-        var yaw = pitchYaw.x;
-
-        Matrix4x4 yawRot = new(
-            new Vector4(1f,             0f,              0f, 0f),
-            new Vector4(0f, Mathf.Cos(yaw), -Mathf.Sin(yaw), 0f),
-            new Vector4(0f, Mathf.Sin(yaw),  Mathf.Cos(yaw), 0f),
-            new Vector4(0f,             0f,              0f, 1f)
-        );
+        var yaw = yawPitch.x;
+        var pitch = yawPitch.y;
 
         Matrix4x4 pitchRot = new(
-            new Vector4( Mathf.Cos(pitch), 0f, Mathf.Sin(pitch), 0f),
-            new Vector4(               0f, 1f,               0f, 0f),
-            new Vector4(-Mathf.Sin(pitch), 0f, Mathf.Cos(pitch), 0f),
-            new Vector4(               0f, 0f,               0f, 1f)
+            new Vector4(1f,               0f,                0f, 0f),
+            new Vector4(0f, Mathf.Cos(pitch), -Mathf.Sin(pitch), 0f),
+            new Vector4(0f, Mathf.Sin(pitch),  Mathf.Cos(pitch), 0f),
+            new Vector4(0f,               0f,                0f, 1f)
         );
 
-        Matrix4x4 rotationMatrix = pitchRot * yawRot;
+        Matrix4x4 yawRot = new(
+            new Vector4( Mathf.Cos(yaw), 0f, Mathf.Sin(yaw), 0f),
+            new Vector4(             0f, 1f,             0f, 0f),
+            new Vector4(-Mathf.Sin(yaw), 0f, Mathf.Cos(yaw), 0f),
+            new Vector4(             0f, 0f,             0f, 1f)
+        );
+
+        Matrix4x4 rotationMatrix = yawRot * pitchRot;
 
         Matrix4x4 positionMatrix = new(
             new Vector4(1f, 0f, 0f, -pos.x),

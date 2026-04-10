@@ -14,7 +14,13 @@ public class CameraOrbital : CameraCasera
     public float scrollSensitivity = 1f;
 
     [Header("Estado actual")]
-    [SerializeField] [Tooltip("OJOTA porque está en radianes")] private Vector2 pitchYaw = new(0,0);
+    [SerializeField] [Tooltip("OJOTA porque está en radianes")] private Vector2 yawPitch = new(0,0);
+
+    void Start()
+    {
+        // Lo llamo una vez para que se posicione bien al inicio, sino hasta que el usuario mueva el mouse no se va a actualizar la posición de la cámara
+        HandleOrbit(true);
+    }
 
     void Update()
     {
@@ -22,21 +28,21 @@ public class CameraOrbital : CameraCasera
         HandleZoom();
     }
 
-    public void HandleOrbit()
+    public void HandleOrbit(bool forceUpdate = false)
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) || forceUpdate)
         {
             var mouseDeltaPos = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
             var minPitchRad = Mathf.Deg2Rad * (90f - maxPitch);
             var maxPitchRad = Mathf.Deg2Rad * (90f + maxPitch);
 
-            pitchYaw += pitchYawSensitivity * (Vector2)mouseDeltaPos;
-            pitchYaw = new(pitchYaw.x, Mathf.Clamp(pitchYaw.y, minPitchRad, maxPitchRad));
+            yawPitch += pitchYawSensitivity * (Vector2)mouseDeltaPos;
+            yawPitch = new(yawPitch.x, Mathf.Clamp(yawPitch.y, minPitchRad, maxPitchRad));
 
             position = distance * new Vector3(
-                Mathf.Sin(pitchYaw.y) * Mathf.Cos(pitchYaw.x),
-                Mathf.Cos(pitchYaw.y),
-                Mathf.Sin(pitchYaw.y) * Mathf.Sin(pitchYaw.x)
+                Mathf.Sin(yawPitch.y) * Mathf.Cos(yawPitch.x),
+                Mathf.Cos(yawPitch.y),
+                Mathf.Sin(yawPitch.y) * Mathf.Sin(yawPitch.x)
             );
         }
     }
