@@ -11,7 +11,7 @@ public class Muebles : MonoBehaviour
         string path = Path.Combine(Application.dataPath, "ModelosOBJ/chairs/chair3/chair3.obj");
         LoadedObjectData silla = loader1.LoadObj(
             path,
-            "ShaderBasico",
+            "ShaderMVP",
             marron,
             new Vector3(2f, 0f, 5f),      // posición
             Vector3.zero,                 // rotación
@@ -24,7 +24,7 @@ public class Muebles : MonoBehaviour
         string path2 = Path.Combine(Application.dataPath, "ModelosOBJ/tables/table/table.obj");
         LoadedObjectData mesa = loader1.LoadObj(
             path2,
-            "ShaderBasico",
+            "ShaderMVP",
             marron,
             new Vector3(3f, 0f, 5f),      // posición
             Vector3.zero,                 // rotación

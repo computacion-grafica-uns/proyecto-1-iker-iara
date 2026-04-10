@@ -74,14 +74,28 @@ public class Matrices
         return vista;
     }
 
+    private Matrix4x4 CreateProjectionMatrix(float fov, float aspect, float nearClip, float farClip)
+    {
+        var invTan = 1f / Mathf.Tan(Mathf.Deg2Rad * fov / 2);
+        var diffNearFar = nearClip - farClip;
+
+        return new Matrix4x4(
+            new Vector4(invTan / aspect,                  0,                                    0,                                  0),
+            new Vector4(              0,             invTan,                                    0,                                  0),
+            new Vector4(              0,                  0,   (nearClip + farClip) / diffNearFar,   2*nearClip*farClip / diffNearFar),
+            new Vector4(              0,                  0,                                   -1,                                  0)
+        );
+    }
+
     public void RecalcularMatrices(Vector3 newPosition, Vector3 newRotation, Vector3 newScale, Vector3 cameraPos, Vector3 target, Vector3 up, GameObject gameObject)
     {
-        Matrix4x4 modelMatrix;
-        Matrix4x4 viewMatrix;
+        Matrix4x4 modelMatrix, viewMatrix, projMatrix;
 
         modelMatrix = CreateModelMatrix(newPosition, newRotation, newScale);
         gameObject.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix", modelMatrix);
         viewMatrix = CreateViewMatrix(cameraPos, target, up);
         gameObject.GetComponent<Renderer>().material.SetMatrix("_ViewMatrix", viewMatrix);
+        projMatrix = CreateProjectionMatrix(60, 16f/9f, 0.01f, 100f);
+        gameObject.GetComponent<Renderer>().material.SetMatrix("_ProjectionMatrix", GL.GetGPUProjectionMatrix(projMatrix.transpose, true));
     }
 }
