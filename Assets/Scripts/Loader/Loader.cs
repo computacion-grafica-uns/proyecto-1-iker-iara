@@ -1,5 +1,6 @@
 using System.IO;
 using UnityEngine;
+
 public class LoadedObjectData
 {
     public string Name;
@@ -12,11 +13,22 @@ public class LoadedObjectData
     public Vector3[] Vertices;
     public int[] Triangles;
     public Color[] Colors;
+    public Matrices Matriz;
 }
+
 public class Loader
 {
-    public string objPath;
-    public LoadedObjectData LoadObj(string objPath, string shaderName, Color color)
+    public LoadedObjectData LoadObj(
+        string objPath,
+        string shaderName,
+        Color color,
+        Vector3 position,
+        Vector3 rotation,
+        Vector3 scale,
+        Vector3 cameraPos,
+        Vector3 target,
+        Vector3 up
+    )
     {
         FileReader reader = new FileReader();
         ObjData objData = reader.Read(objPath);
@@ -59,8 +71,10 @@ public class Loader
 
         Material material = new Material(shader);
         material.color = color;
-        //Aca deberiamos ver el tema de la MVPmatrix
         meshRenderer.material = material;
+
+        Matrices matriz = new Matrices();
+        matriz.RecalcularMatrices(position, rotation, scale, cameraPos, target, up, obj);
 
         LoadedObjectData loadedData = new LoadedObjectData
         {
@@ -73,7 +87,8 @@ public class Loader
             Material = material,
             Vertices = objData.Vertices,
             Triangles = objData.Triangles,
-            Colors = colors
+            Colors = colors,
+            Matriz = matriz
         };
 
         return loadedData;

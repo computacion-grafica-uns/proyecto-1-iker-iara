@@ -113,7 +113,6 @@ public class FileReader
         };
     }
 }
-
 public class ObjData
 {
     public Vector3[] Vertices;

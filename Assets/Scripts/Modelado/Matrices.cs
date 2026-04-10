@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 using UnityEditor;
 using UnityEngine;
 
-public class ModelMatrix
+public class Matrices
 {
     private Matrix4x4 CreateModelMatrix(Vector3 newPosition, Vector3 newRotation, Vector3 newScale)
     {
