@@ -43,7 +43,7 @@ public class CameraOrbital : CameraCasera
                 Mathf.Sin(yawPitch.y) * Mathf.Cos(yawPitch.x),
                 Mathf.Cos(yawPitch.y),
                 Mathf.Sin(yawPitch.y) * Mathf.Sin(yawPitch.x)
-            );
+            ) + target;
         }
     }
 

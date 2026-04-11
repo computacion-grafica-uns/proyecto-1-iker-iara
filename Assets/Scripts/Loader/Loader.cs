@@ -1,6 +1,7 @@
 using System.IO;
 using UnityEngine;
 
+[System.Serializable] // Para poder mostrar esta clase en el inspector de Unity
 public class LoadedObjectData
 {
     public string Name;

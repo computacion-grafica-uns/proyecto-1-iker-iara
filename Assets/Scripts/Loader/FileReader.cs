@@ -75,17 +75,19 @@ public class FileReader
                         quadIndices[j] = int.Parse(partes[0]) - 1;
                     }
 
-                    trianglesList.Add(quadIndices[0]);
+                    trianglesList.Add(quadIndices[2]);
                     trianglesList.Add(quadIndices[1]);
-                    trianglesList.Add(quadIndices[2]);
-
                     trianglesList.Add(quadIndices[0]);
-                    trianglesList.Add(quadIndices[2]);
+
                     trianglesList.Add(quadIndices[3]);
+                    trianglesList.Add(quadIndices[2]);
+                    trianglesList.Add(quadIndices[0]);
                 }
                 else if (cara.Length == 4) // triángulo
                 {
-                    for (int j = 0; j < 3; j++)
+                    // Los archivos OBJ guardan los vértices en sentido antihorario,
+                    // pero Unity los lee en sentido horario, por eso hay que recorrerlos al revés
+                    for (int j = 2; j >= 0; j--)
                     {
                         string[] partes = cara[j + 1].Split('/');
                         trianglesList.Add(int.Parse(partes[0]) - 1);
@@ -94,7 +96,7 @@ public class FileReader
             }
         }
 
-        // Centrar en X y Z, como hacías vos
+        // Centrar en X y Z
         float reposx = (minX + maxX) / 2f;
         float reposz = (minZ + maxZ) / 2f;
 
