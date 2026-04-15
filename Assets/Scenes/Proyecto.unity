@@ -282,7 +282,7 @@ MonoBehaviour:
   speed: 2
   sprintMult: 3
   sneakMult: 0.4
-  normalFov: 90
+  normalFov: 60
   zoomedFov: 40
   zoomSwitchSpeed: 20
   yawPitch: {x: 8.567543, y: 0.38249955}
@@ -452,7 +452,7 @@ MonoBehaviour:
   - name: Silla
     path: ModelosOBJ/chairs/chair3/chair3.obj
     position: {x: 1, y: 0, z: -0.8}
-    rotation: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 90, z: 0}
     scale: {x: 0.77, y: 0.77, z: 0.77}
     shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
     color: {r: 0.735849, g: 0.4427036, b: 0.17007832, a: 0}

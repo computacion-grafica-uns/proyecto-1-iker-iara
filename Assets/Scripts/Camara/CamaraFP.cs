@@ -24,9 +24,6 @@ public class FpsCamera : CameraCasera
         HandleLookaround();
         HandleWalk();
         HandleZoom();
-
-        if (Camera.current != null && recalculateCulling)
-            Camera.current.cullingMatrix = GetCullingMatrix();
     }
 
     public void HandleWalk()
