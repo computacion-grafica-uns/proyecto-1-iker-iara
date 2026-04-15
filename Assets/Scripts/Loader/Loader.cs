@@ -1,34 +1,16 @@
 using System.IO;
 using UnityEngine;
 
-[System.Serializable] // Para poder mostrar esta clase en el inspector de Unity
-public class LoadedObjectData
-{
-    public string Name;
-    public string Path;
-    public GameObject GameObject;
-    public Mesh Mesh;
-    public MeshFilter MeshFilter;
-    public MeshRenderer MeshRenderer;
-    public Material Material;
-    public Vector3[] Vertices;
-    public int[] Triangles;
-    public Color[] Colors;
-    public Matrices Matriz;
-}
-
 public class Loader
 {
     public LoadedObjectData LoadObj(
+        string objName,
         string objPath,
         string shaderName,
         Color color,
         Vector3 position,
         Vector3 rotation,
-        Vector3 scale,
-        Vector3 cameraPos,
-        Vector3 target,
-        Vector3 up
+        Vector3 scale
     )
     {
         FileReader reader = new FileReader();
@@ -39,15 +21,13 @@ public class Loader
             return null;
         }
 
-        string objectName = Path.GetFileNameWithoutExtension(objPath);
-
-        GameObject obj = new GameObject(objectName);
+        GameObject obj = new GameObject(objName);
 
         MeshFilter meshFilter = obj.AddComponent<MeshFilter>();
         MeshRenderer meshRenderer = obj.AddComponent<MeshRenderer>();
 
         Mesh mesh = new Mesh();
-        mesh.name = objectName + "_Mesh";
+        mesh.name = objName + "_Mesh";
         mesh.vertices = objData.Vertices;
         mesh.triangles = objData.Triangles;
 
@@ -71,15 +51,15 @@ public class Loader
         }
 
         Material material = new Material(shader);
-        material.color = color;
-        meshRenderer.material = material;
+        Matrix4x4 mm = Matrices.CreateModelMatrix(position, rotation, scale);
 
-        Matrices matriz = new Matrices();
-        matriz.RecalcularMatrices(position, rotation, scale, cameraPos, target, up, obj);
+        material.color = color;
+        material.SetMatrix("_ModelMatrix", mm);
+        meshRenderer.material = material;
 
         LoadedObjectData loadedData = new LoadedObjectData
         {
-            Name = objectName,
+            Name = objName,
             Path = objPath,
             GameObject = obj,
             Mesh = mesh,
@@ -88,8 +68,7 @@ public class Loader
             Material = material,
             Vertices = objData.Vertices,
             Triangles = objData.Triangles,
-            Colors = colors,
-            Matriz = matriz
+            Colors = colors
         };
 
         return loadedData;

@@ -350,7 +350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1334717003
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -417,6 +417,87 @@ Transform:
   - {fileID: 1699982740}
   - {fileID: 2099937903}
   - {fileID: 627933808}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1481431285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1481431287}
+  - component: {fileID: 1481431286}
+  m_Layer: 0
+  m_Name: Geometria
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1481431286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481431285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1229189475a63cf4faadbdb84e9166df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetosACargar:
+  - name: Silla
+    path: ModelosOBJ/chairs/chair3/chair3.obj
+    position: {x: 1, y: 0, z: -0.8}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.735849, g: 0.4427036, b: 0.17007832, a: 0}
+  - name: Mesa
+    path: ModelosOBJ/tables/table/table.obj
+    position: {x: 1, y: 0, z: -1.4}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.55, y: 0.55, z: 0.55}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.5, g: 0.2920276, b: 0.10613209, a: 0}
+  - name: Paredes
+    path: ModelosOBJ/Estructura/Paredes.obj
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.9056604, g: 0.8443885, b: 0.72196513, a: 0}
+  - name: Techo
+    path: ModelosOBJ/Estructura/Techo.obj
+    position: {x: 0, y: 2.4, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.7783019, g: 0.8002578, b: 1, a: 0}
+  - name: Piso
+    path: ModelosOBJ/Estructura/Piso.obj
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.09166963, g: 0.10666272, b: 0.18867922, a: 0}
+  objetosCargados: []
+--- !u!4 &1481431287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481431285}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1699982739
@@ -716,3 +797,4 @@ SceneRoots:
   - {fileID: 1307393129}
   - {fileID: 2127000818}
   - {fileID: 1334717005}
+  - {fileID: 1481431287}

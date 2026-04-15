@@ -12,29 +12,25 @@ public class Muebles : MonoBehaviour
 
         string path = Path.Combine(Application.dataPath, "ModelosOBJ/chairs/chair3/chair3.obj");
         LoadedObjectData silla = loader1.LoadObj(
+            "Silla",
             path,
             "ShaderMVP",
             new Color(0.5f, 0.25f, 0f),   // marrón
             new Vector3(1f, 0f, -0.8f),   // posición
             new Vector3(0f, 90f, 0f),     // rotación
-            new Vector3(0.77f, 0.77f, 0.77f), // escala
-            new Vector3(0f, 2f, -10f),    // cámara
-            new Vector3(0f, 0f, 5f),      // target
-            Vector3.up                    // up
+            new Vector3(0.77f, 0.77f, 0.77f) // escala
         );
         objetosCargados.Add(silla);
 
         string path2 = Path.Combine(Application.dataPath, "ModelosOBJ/tables/table/table.obj");
         LoadedObjectData mesa = loader1.LoadObj(
+            "Mesa",
             path2,
             "ShaderMVP",
             new Color(0.25f, 0.12f, 0f),  // marrón oscuro
             new Vector3(1f, 0f, -1.4f),   // posición
             Vector3.zero,                 // rotación
-            new Vector3(0.55f, 0.55f, 0.55f), // escala
-            new Vector3(0f, 2f, -10f),    // cámara
-            new Vector3(3f, 0f, 5f),      // target
-            Vector3.up                    // up
+            new Vector3(0.55f, 0.55f, 0.55f) // escala
         );
         objetosCargados.Add(mesa);
 
@@ -44,41 +40,35 @@ public class Muebles : MonoBehaviour
         // las paredes, el techo, el piso, etc.
         //
         LoadedObjectData paredes = loader1.LoadObj(
+            "Paredes",
             Path.Combine(Application.dataPath, "ModelosOBJ/Estructura/Paredes.obj"),
             "ShaderMVP",
             new Color(0.5f, 0.5f, 0.5f), // gris
             new Vector3(0f, 0f, 0f),     // posición
             Vector3.zero,                // rotación
-            new Vector3(1f, 1f, 1f),     // escala
-            Vector3.zero,                // cámara
-            Vector3.zero,                // target
-            Vector3.up                   // up
+            new Vector3(1f, 1f, 1f)      // escala
         );
         objetosCargados.Add(paredes);
 
         LoadedObjectData techo = loader1.LoadObj(
+            "Techo",
             Path.Combine(Application.dataPath, "ModelosOBJ/Estructura/Techo.obj"),
             "ShaderMVP",
             new Color(0.1f, 0.1f, 0.1f), // gris oscuro
             new Vector3(0f, 2.4f, 0f),   // posición
             Vector3.zero,                // rotación
-            new Vector3(1f, 1f, 1f),     // escala
-            Vector3.zero,                // cámara
-            Vector3.zero,                // target
-            Vector3.up                   // up
+            new Vector3(1f, 1f, 1f)      // escala
         );
         objetosCargados.Add(techo);
 
         LoadedObjectData piso = loader1.LoadObj(
+            "Piso",
             Path.Combine(Application.dataPath, "ModelosOBJ/Estructura/Piso.obj"),
             "ShaderMVP",
             new Color(0.9f, 0.9f, 0.4f), // amarillo claro
             new Vector3(0f, 0f, 0f),     // posición
             Vector3.zero,                // rotación
-            new Vector3(1f, 1f, 1f),     // escala
-            Vector3.zero,                // cámara
-            Vector3.zero,                // target
-            Vector3.up                   // up
+            new Vector3(1f, 1f, 1f)      // escala
         );
         objetosCargados.Add(piso);
     }
