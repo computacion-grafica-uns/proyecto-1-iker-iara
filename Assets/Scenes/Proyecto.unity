@@ -172,6 +172,7 @@ MonoBehaviour:
   fov: 60
   nearClip: 0.1
   farClip: 1000
+  recalculateCulling: 1
   distance: 10
   target: {x: 0, y: 0, z: 0}
   maxPitch: 40
@@ -275,6 +276,7 @@ MonoBehaviour:
   fov: 90
   nearClip: 0.1
   farClip: 1000
+  recalculateCulling: 1
   maxPitch: 80
   pitchYawSensitivity: {x: 0.05, y: -0.05}
   speed: 2

@@ -26,6 +26,9 @@ public class CameraOrbital : CameraCasera
     {
         HandleOrbit();
         HandleZoom();
+
+        if (Camera.current != null && recalculateCulling)
+            Camera.current.cullingMatrix = GetCullingMatrix();
     }
 
     public void HandleOrbit(bool forceUpdate = false)
@@ -57,5 +60,13 @@ public class CameraOrbital : CameraCasera
     public override Matrix4x4 GetViewMatrix()
     {
         return Matrices.CreateViewMatrixFromTargetPoint(position, target, Vector3.up);
+    }
+
+    public override Matrix4x4 GetCullingMatrix()
+    {
+        var vm = Matrices.CreateViewMatrixFromTargetPoint(position, target, Vector3.up);
+        var pm = Matrices.CreateProjectionMatrix(fov, aspectRatio, nearClip, farClip);
+
+        return pm * vm;
     }
 }

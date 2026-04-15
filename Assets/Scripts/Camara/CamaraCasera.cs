@@ -9,11 +9,15 @@ public abstract class CameraCasera : MonoBehaviour
     public float nearClip = 0.1f;
     public float farClip = 1000f;
 
+    public bool recalculateCulling = false;
+
     void Awake()
     {
         if (calculateAspectOnLoad)
             aspectRatio = Screen.width / Screen.height;
     }
+
+    public abstract Matrix4x4 GetCullingMatrix();
 
     public abstract Matrix4x4 GetViewMatrix();
 

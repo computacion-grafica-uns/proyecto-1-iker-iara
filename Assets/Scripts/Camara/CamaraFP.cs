@@ -24,6 +24,9 @@ public class FpsCamera : CameraCasera
         HandleLookaround();
         HandleWalk();
         HandleZoom();
+
+        if (Camera.current != null && recalculateCulling)
+            Camera.current.cullingMatrix = GetCullingMatrix();
     }
 
     public void HandleWalk()
@@ -67,5 +70,13 @@ public class FpsCamera : CameraCasera
     public override Matrix4x4 GetViewMatrix()
     {
         return Matrices.CreateViewMatrixFromSphericalCoords(position, yawPitch);
+    }
+
+    public override Matrix4x4 GetCullingMatrix()
+    {
+        var vm = Matrices.CreateViewMatrixFromSphericalCoords(position, yawPitch);
+        var pm = Matrices.CreateProjectionMatrix(fov, aspectRatio, nearClip, farClip);
+
+        return pm * vm;
     }
 }
