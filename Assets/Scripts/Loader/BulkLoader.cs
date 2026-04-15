@@ -22,7 +22,8 @@ public class BulkLoader : MonoBehaviour
                 options.color,
                 options.position,
                 options.rotation,
-                options.scale
+                options.scale,
+                this.transform
             );
 
             objetosCargados.Add(obj);    

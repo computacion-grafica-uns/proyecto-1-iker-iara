@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
     public CameraCasera fpsCamera;
     public CameraCasera currentCamera;
 
+    public GameObject paredes;
+    public GameObject techo;
+
     public static GameManager instance;
 
     void Awake()
@@ -46,6 +49,12 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Alpha2) || Input.GetKeyUp(KeyCode.Keypad2))
             SwitchToCamera(fpsCamera);
+
+        if (Input.GetKeyUp(KeyCode.Alpha9) || Input.GetKeyUp(KeyCode.Keypad9))
+            ToggleGameObject(techo);
+
+        if (Input.GetKeyUp(KeyCode.Alpha8) || Input.GetKeyUp(KeyCode.Keypad8))
+            ToggleGameObject(paredes);
     }
 
     private void SwitchToCamera(CameraCasera camera)
@@ -61,5 +70,10 @@ public class GameManager : MonoBehaviour
     {
         Cursor.visible = !Cursor.visible;
         Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
+    }
+
+    private void ToggleGameObject(GameObject go)
+    {
+        go.SetActive(!go.activeSelf);
     }
 }

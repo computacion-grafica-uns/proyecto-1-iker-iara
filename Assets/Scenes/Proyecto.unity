@@ -173,6 +173,7 @@ MonoBehaviour:
   nearClip: 0.1
   farClip: 1000
   recalculateCulling: 1
+  realCamera: {fileID: 0}
   distance: 10
   target: {x: 0, y: 0, z: 0}
   maxPitch: 40
@@ -277,6 +278,7 @@ MonoBehaviour:
   nearClip: 0.1
   farClip: 1000
   recalculateCulling: 1
+  realCamera: {fileID: 0}
   maxPitch: 80
   pitchYawSensitivity: {x: 0.05, y: -0.05}
   speed: 2

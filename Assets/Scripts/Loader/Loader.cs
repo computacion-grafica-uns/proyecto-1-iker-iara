@@ -10,7 +10,8 @@ public class Loader
         Color color,
         Vector3 position,
         Vector3 rotation,
-        Vector3 scale
+        Vector3 scale,
+        Transform parent = null
     )
     {
         FileReader reader = new FileReader();
@@ -22,6 +23,9 @@ public class Loader
         }
 
         GameObject obj = new GameObject(objName);
+
+        if (parent != null)
+            obj.transform.SetParent(parent);
 
         MeshFilter meshFilter = obj.AddComponent<MeshFilter>();
         MeshRenderer meshRenderer = obj.AddComponent<MeshRenderer>();
