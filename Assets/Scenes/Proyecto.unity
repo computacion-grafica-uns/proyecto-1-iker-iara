@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 5.821843, y: -6.4278765, z: 4.9788103}
   aspectRatio: 1.4
+  calculateAspectOnLoad: 1
   fov: 60
   nearClip: 0.1
   farClip: 1000
@@ -270,12 +271,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: -2.2132967, y: 1.6320826, z: -2.4771147}
   aspectRatio: 1.4
+  calculateAspectOnLoad: 1
   fov: 90
   nearClip: 0.1
   farClip: 1000
   maxPitch: 80
   pitchYawSensitivity: {x: 0.05, y: -0.05}
-  speed: 5
+  speed: 2
   sprintMult: 3
   sneakMult: 0.4
   normalFov: 90
@@ -668,7 +670,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
