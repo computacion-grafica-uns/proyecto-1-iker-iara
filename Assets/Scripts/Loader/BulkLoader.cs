@@ -39,8 +39,16 @@ public class BulkLoader : MonoBehaviour
         foreach (var obj in objetosCargados)
         {
             var material = obj.MeshRenderer.material;
+            var orig = objetosACargar.Find(o => o.name == obj.Name);
+            var pos = orig.position;
+            var rot = orig.rotation;
+            var sca = orig.scale;
+
+            var mm = Matrices.CreateModelMatrix(pos, rot, sca);
+
             // Por ahora las posiciones de los objetos no cambian,
             // por lo que no es necesario actualizar su ModelMatrix
+            material.SetMatrix("_ModelMatrix", mm);
             material.SetMatrix("_ViewMatrix", vm);
             material.SetMatrix("_ProjectionMatrix", pm);
         }

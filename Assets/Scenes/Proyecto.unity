@@ -386,20 +386,104 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetosACargar:
-  - name: Silla
-    path: ModelosOBJ/chairs/chair3/chair3.obj
-    position: {x: 1, y: 0, z: -0.8}
-    rotation: {x: 0, y: 90, z: 0}
-    scale: {x: 0.77, y: 0.77, z: 0.77}
-    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
-    color: {r: 0.735849, g: 0.4427036, b: 0.17007832, a: 0}
   - name: Mesa
     path: ModelosOBJ/tables/table/table.obj
-    position: {x: 1, y: 0, z: -1.4}
+    position: {x: 1.85, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 0.55, y: 0.55, z: 0.55}
     shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
     color: {r: 0.5, g: 0.2920276, b: 0.10613209, a: 0}
+  - name: Silla 1
+    path: ModelosOBJ/chairs/chair3/chair3.obj
+    position: {x: 1.25, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.735849, g: 0.4427036, b: 0.17007832, a: 0}
+  - name: Silla 2
+    path: ModelosOBJ/chairs/chair3/chair3.obj
+    position: {x: 1.85, y: 0, z: 0.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.735849, g: 0.4427036, b: 0.17007832, a: 0}
+  - name: Silla 3
+    path: ModelosOBJ/chairs/chair3/chair3.obj
+    position: {x: 1.85, y: 0, z: -0.5}
+    rotation: {x: 0, y: -90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.735849, g: 0.4427036, b: 0.17007832, a: 0}
+  - name: Cama
+    path: ModelosOBJ/beds/bed1/bed1.obj
+    position: {x: -1.25, y: 0, z: -1.5}
+    rotation: {x: 0, y: -90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.7372549, g: 0.2313041, b: 0.16862746, a: 0}
+  - name: Placard
+    path: ModelosOBJ/Wardrobes/Wardrobe3/Wardrobe3.obj
+    position: {x: -1.25, y: 0, z: -0.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.81960785, g: 0.703219, b: 0.5294118, a: 0}
+  - name: Sillon
+    path: ModelosOBJ/sofa`s/sofa/sofa.obj
+    position: {x: 1.32, y: 0, z: -2.45}
+    rotation: {x: 0, y: -90, z: 0}
+    scale: {x: 0.7, y: 1, z: 0.7}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.7735849, g: 0.7367731, b: 0.5947846, a: 0}
+  - name: Heladera
+    path: ModelosOBJ/Kitchen/Fridge/Fridge.obj
+    position: {x: 2, y: 1.6, z: 2.5}
+    rotation: {x: 180, y: -90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 1}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.7817729, g: 0.8731653, b: 0.9056604, a: 0}
+  - name: Cocina
+    path: ModelosOBJ/Kitchen/Cabinets/KitchenStoveWithOven/KitchenStoveWithOven.obj
+    position: {x: 0.1, y: 0, z: 2.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.254717, g: 0.254717, b: 0.254717, a: 0}
+  - name: Bacha
+    path: ModelosOBJ/Kitchen/Cabinets/KithcenCabinet1WithSink/KitchenCabinet1WithSink.obj
+    position: {x: 1.05, y: 0, z: 2.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 1.1}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.8867924, g: 0.7053414, b: 0.43921322, a: 0}
+  - name: Ducha
+    path: ModelosOBJ/Bathroom/shower/shower.obj
+    position: {x: -1.85, y: 0, z: 2.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 1.1}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.66665184, g: 0.66885614, b: 0.6698113, a: 0}
+  - name: Inodoro
+    path: ModelosOBJ/Bathroom/toilets/toilet2/toilet2.obj
+    position: {x: -0.85, y: 0, z: 2.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.9386792, g: 0.98632693, b: 1, a: 0}
+  - name: Lavamanos
+    path: ModelosOBJ/Bathroom/sink/sink.obj
+    position: {x: -2.17, y: 0, z: 0.68}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 1.1}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.9372549, g: 0.9882353, b: 1, a: 0}
+  - name: Espejo
+    path: ModelosOBJ/Bathroom/mirror/mirror.obj
+    position: {x: -2.38, y: 0, z: 0.68}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 1.1}
+    shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
+    color: {r: 0.612985, g: 0.84311867, b: 0.8962264, a: 0}
   objetosCargados: []
 --- !u!1 &1307393127
 GameObject:
