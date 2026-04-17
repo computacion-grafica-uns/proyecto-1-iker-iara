@@ -420,7 +420,7 @@ MonoBehaviour:
     rotation: {x: 0, y: -90, z: 0}
     scale: {x: 0.77, y: 0.77, z: 0.77}
     shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
-    color: {r: 0.7372549, g: 0.2313041, b: 0.16862746, a: 0}
+    color: {r: 0.77254903, g: 0.039215673, b: 0.11196777, a: 0}
   - name: Placard
     path: ModelosOBJ/Wardrobes/Wardrobe3/Wardrobe3.obj
     position: {x: -1.25, y: 0, z: -0.5}
@@ -685,7 +685,7 @@ MonoBehaviour:
     rotation: {x: 0, y: -90, z: 0}
     scale: {x: 0.875, y: 0.925, z: 0.8}
     shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
-    color: {r: 0.3773585, g: 0.27791947, b: 0.094339624, a: 0}
+    color: {r: 0.3773585, g: 0.27791947, b: 0.094339624, a: 0.44705883}
   objetosCargados: []
 --- !u!1 &1481431285
 GameObject:

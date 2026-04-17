@@ -63,34 +63,23 @@ public class FileReader
             }
             else if (line.StartsWith("f "))
             {
-                string[] cara = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                var parts = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-                if (cara.Length == 5) // quad
+                var vArr  = new int[parts.Length - 1];
+
+                for (var j = 1; j < parts.Length; j++)
                 {
-                    int[] quadIndices = new int[4];
+                    var vd = parts[j].Split("/");
 
-                    for (int j = 0; j < 4; j++)
+                    vArr[j - 1] = int.Parse(vd[0]) - 1;
+                    //vtArr[i - 1] = int.Parse(vd[1]);
+                    //vnArr[i - 1] = int.Parse(vd[2]);
+
+                    if (j >= 3)
                     {
-                        string[] partes = cara[j + 1].Split('/');
-                        quadIndices[j] = int.Parse(partes[0]) - 1;
-                    }
-
-                    trianglesList.Add(quadIndices[2]);
-                    trianglesList.Add(quadIndices[1]);
-                    trianglesList.Add(quadIndices[0]);
-
-                    trianglesList.Add(quadIndices[3]);
-                    trianglesList.Add(quadIndices[2]);
-                    trianglesList.Add(quadIndices[0]);
-                }
-                else if (cara.Length == 4) // triángulo
-                {
-                    // Los archivos OBJ guardan los vértices en sentido antihorario,
-                    // pero Unity los lee en sentido horario, por eso hay que recorrerlos al revés
-                    for (int j = 2; j >= 0; j--)
-                    {
-                        string[] partes = cara[j + 1].Split('/');
-                        trianglesList.Add(int.Parse(partes[0]) - 1);
+                        trianglesList.Add(vArr[j - 1]);
+                        trianglesList.Add(vArr[j - 2]);
+                        trianglesList.Add(vArr[0]);
                     }
                 }
             }
