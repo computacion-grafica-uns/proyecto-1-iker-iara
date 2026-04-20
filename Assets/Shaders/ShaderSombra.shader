@@ -39,7 +39,7 @@ Shader "ShaderSombra"
                 float v = worldPos.y;
                 float w = worldPos.z;
 
-                worldPos.y = 0.02;
+                worldPos.y = 0.005;
                 worldPos.x = (a*v - b*u) / (v - b);
                 worldPos.z = (c*v - b*w) / (v - b);
                 

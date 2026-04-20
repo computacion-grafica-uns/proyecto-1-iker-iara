@@ -30,7 +30,7 @@ public class BulkLoader : MonoBehaviour
         }
     }
 
-    void Update()
+    void LateUpdate()
     {
         var curCam = GameManager.instance.currentCamera;
         var vm = curCam.GetViewMatrix();

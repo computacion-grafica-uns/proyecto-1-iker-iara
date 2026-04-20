@@ -225,8 +225,6 @@ MonoBehaviour:
   fov: 60
   nearClip: 0.1
   farClip: 1000
-  recalculateCulling: 1
-  realCamera: {fileID: 0}
   distance: 10
   target: {x: 0, y: 0, z: 0}
   maxPitch: 40
@@ -330,8 +328,6 @@ MonoBehaviour:
   fov: 90
   nearClip: 0.1
   farClip: 1000
-  recalculateCulling: 1
-  realCamera: {fileID: 0}
   maxPitch: 80
   pitchYawSensitivity: {x: 0.05, y: -0.05}
   speed: 2
@@ -341,6 +337,150 @@ MonoBehaviour:
   zoomedFov: 40
   zoomSwitchSpeed: 20
   yawPitch: {x: 8.567543, y: 0.38249955}
+--- !u!1 &1109961805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1109961806}
+  - component: {fileID: 1109961807}
+  m_Layer: 0
+  m_Name: Sombras Muebles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1109961806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109961805}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1481431287}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1109961807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109961805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1229189475a63cf4faadbdb84e9166df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetosACargar:
+  - name: Mesa
+    path: ModelosOBJ/tables/table/table.obj
+    position: {x: 1.85, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.55, y: 0.55, z: 0.55}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.04236383, g: 0.047661092, b: 0.0754717, a: 0}
+  - name: Silla 1
+    path: ModelosOBJ/chairs/chair3/chair3.obj
+    position: {x: 1.25, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Silla 2
+    path: ModelosOBJ/chairs/chair3/chair3.obj
+    position: {x: 1.85, y: 0, z: 0.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Silla 3
+    path: ModelosOBJ/chairs/chair3/chair3.obj
+    position: {x: 1.85, y: 0, z: -0.5}
+    rotation: {x: 0, y: -90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Cama
+    path: ModelosOBJ/beds/bed1/bed1.obj
+    position: {x: -1.25, y: -0.13, z: -1.5}
+    rotation: {x: 0, y: -90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Placard
+    path: ModelosOBJ/Wardrobes/Wardrobe3/Wardrobe3.obj
+    position: {x: -1.25, y: 0, z: -0.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Sillon
+    path: ModelosOBJ/sofa`s/sofa/sofa.obj
+    position: {x: 1.32, y: 0, z: -2.45}
+    rotation: {x: 0, y: -90, z: 0}
+    scale: {x: 0.7, y: 1, z: 0.7}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Heladera
+    path: ModelosOBJ/Kitchen/Fridge/Fridge.obj
+    position: {x: 2, y: 1.6, z: 2.5}
+    rotation: {x: 180, y: -90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 1}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Cocina
+    path: ModelosOBJ/Kitchen/Cabinets/KitchenStoveWithOven/KitchenStoveWithOven.obj
+    position: {x: 0.1, y: 0, z: 2.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Bacha
+    path: ModelosOBJ/Kitchen/Cabinets/KithcenCabinet1WithSink/KitchenCabinet1WithSink.obj
+    position: {x: 1.05, y: 0, z: 2.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 1.1}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Ducha
+    path: ModelosOBJ/Bathroom/shower/shower.obj
+    position: {x: -1.85, y: 0, z: 2.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 1.1}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Inodoro
+    path: ModelosOBJ/Bathroom/toilets/toilet2/toilet2.obj
+    position: {x: -0.85, y: 0, z: 2.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 0.77}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Lavamanos
+    path: ModelosOBJ/Bathroom/sink/sink.obj
+    position: {x: -2.17, y: 0, z: 0.68}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 1.1}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  - name: Espejo
+    path: ModelosOBJ/Bathroom/mirror/mirror.obj
+    position: {x: -2.38, y: 0, z: 0.68}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.77, y: 0.77, z: 1.1}
+    shader: {fileID: 4800000, guid: 77b0d87ead072dd459db0aef1fbe30ba, type: 3}
+    color: {r: 0.043137256, g: 0.047058824, b: 0.07450981, a: 0}
+  objetosCargados: []
 --- !u!1 &1280457280
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +556,7 @@ MonoBehaviour:
     color: {r: 0.735849, g: 0.4427036, b: 0.17007832, a: 0}
   - name: Cama
     path: ModelosOBJ/beds/bed1/bed1.obj
-    position: {x: -1.25, y: 0, z: -1.5}
+    position: {x: -1.25, y: -0.13, z: -1.5}
     rotation: {x: 0, y: -90, z: 0}
     scale: {x: 0.77, y: 0.77, z: 0.77}
     shader: {fileID: 4800000, guid: 6ef738271857295469afa209aef44f7f, type: 3}
@@ -519,6 +659,7 @@ MonoBehaviour:
   currentCamera: {fileID: 0}
   paredes: {fileID: 1335670623}
   techo: {fileID: 345767153}
+  sombras: {fileID: 1109961805}
 --- !u!4 &1307393129
 Transform:
   m_ObjectHideFlags: 0
@@ -716,10 +857,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1280457281}
-  - {fileID: 1335670624}
-  - {fileID: 1706787855}
   - {fileID: 345767154}
+  - {fileID: 1706787855}
+  - {fileID: 1335670624}
+  - {fileID: 1280457281}
+  - {fileID: 1109961806}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1699982739
