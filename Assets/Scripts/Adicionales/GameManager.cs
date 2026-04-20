@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject paredes;
     public GameObject techo;
+    public GameObject sombras;
 
     public static GameManager instance;
 
@@ -55,6 +56,9 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Alpha8) || Input.GetKeyUp(KeyCode.Keypad8))
             ToggleGameObject(paredes);
+
+        if (Input.GetKeyUp(KeyCode.Alpha7) || Input.GetKeyUp(KeyCode.Keypad7))
+            ToggleGameObject(sombras);
     }
 
     private void SwitchToCamera(CameraCasera camera)
