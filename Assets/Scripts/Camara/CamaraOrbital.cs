@@ -58,12 +58,4 @@ public class CameraOrbital : CameraCasera
     {
         return Matrices.CreateViewMatrixFromTargetPoint(position, target, Vector3.up);
     }
-
-    public override Matrix4x4 GetCullingMatrix()
-    {
-        var vm = Matrices.CreateViewMatrixFromTargetPoint(position, target, Vector3.up);
-        var pm = Matrices.CreateProjectionMatrix(fov, aspectRatio, nearClip, farClip);
-
-        return pm * vm;
-    }
 }

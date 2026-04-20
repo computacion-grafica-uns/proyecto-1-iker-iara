@@ -68,12 +68,4 @@ public class FpsCamera : CameraCasera
     {
         return Matrices.CreateViewMatrixFromSphericalCoords(position, yawPitch);
     }
-
-    public override Matrix4x4 GetCullingMatrix()
-    {
-        var vm = Matrices.CreateViewMatrixFromSphericalCoords(position, yawPitch);
-        var pm = Matrices.CreateProjectionMatrix(fov, aspectRatio, nearClip, farClip);
-
-        return pm * vm;
-    }
 }
