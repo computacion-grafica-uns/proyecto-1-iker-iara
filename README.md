@@ -18,6 +18,7 @@ El objetivo principal es analizar cómo se cargan modelos `.obj`, cómo se repre
 
 El proyecto está organizado en distintas carpetas para separar responsabilidades:
 
+```text
 Assets/
 │
 ├── Loader/
@@ -27,7 +28,7 @@ Assets/
 │   └── Contiene scripts relacionados con el sistema de cámara, vista y proyección.
 │
 ├── Estructura/
-│   └── Contiene scripts para generar elementos de la escena, como paredes, pisos o estructuras. (Aunque luego implementamos estas estructuras con nuestro loader desd el   inspector como .obj)
+│   └── Contiene scripts para generar elementos de la escena, como paredes, pisos o estructuras.
 │
 ├── Modelado/
 │   └── Contiene modelos, objetos 3D y recursos relacionados con la geometría.
@@ -37,3 +38,4 @@ Assets/
 │
 └── Adicionales/
     └── Contiene recursos complementarios utilizados en el proyecto.
+```
